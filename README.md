@@ -1,6 +1,6 @@
 Role2Vec
 ============================================
-A scalable Gensim implementation of "Learning Role-based Graph Embeddings".
+A scalable parallel Gensim implementation of "Learning Role-based Graph Embeddings".
 <div style="text-align:center"><img src ="gwnn.jpg" ,width=720/></div>
 <p align="justify">
 Random walks are at the heart of many existing network embedding methods. However, such algorithms have many limitations that arise from the use of random walks, e.g., the features resulting from these methods are unable to transfer to new nodes and graphs as they are tied to vertex identity. In this work, we introduce the Role2Vec framework which uses the flexible notion of attributed random walks, and serves as a basis for generalizing existing methods such as DeepWalk, node2vec, and many others that leverage random walks. Our proposed framework enables these methods to be more widely applicable for both transductive and inductive learning as well as for use on graphs with attributes (if available). This is achieved by learning functions that generalize to new nodes and graphs. We show that our proposed framework is effective with an average AUC improvement of 16.55% while requiring on average 853x less space than existing methods on a variety of graphs. </p>

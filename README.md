@@ -35,8 +35,7 @@ Training the model is handled by the `src/main.py` script which provides the fol
 
 ```
   --edge-path        STR   Input graph path.   Default is `input/cora_edges.csv`.
-  --features-path    STR   Features path.      Default is `input/cora_features.json`.
-  --target-path      STR   Target path.        Default is `input/cora_target.csv`.
+  --embedding-path         STR   Log path.           Default is `logs/cora_logs.json`.
   --log-path         STR   Log path.           Default is `logs/cora_logs.json`.
 ```
 

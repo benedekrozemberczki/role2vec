@@ -7,10 +7,10 @@ Random walks are at the heart of many existing network embedding methods. Howeve
 
 This repository provides an implementation of Graph Wavelet Neural Network as described in the paper:
 
-> Graph Wavelet Neural Network.
-> Bingbing Xu, Huawei Shen, Qi Cao, Yunqi Qiu, Xueqi Cheng.
-> ICLR, 2019.
-> [[Paper]](https://openreview.net/forum?id=H1ewdiR5tQ)
+> Learning Role-based Graph Embeddings.
+> Nesreen K. Ahmed, Ryan Rossi, John Boaz Lee, Theodore L. Willke, Rong Zhou, Xiangnan Kong, Hoda Eldardiry.
+> ArXiV, 2018.
+> [[Paper]](https://arxiv.org/abs/1802.02896)
 
 ### Requirements
 
@@ -23,39 +23,11 @@ pandas            0.23.4
 texttable         1.5.0
 scipy             1.1.0
 argparse          1.1.0
-torch             0.4.1
-torch-scatter     1.0.4
-torch-sparse      0.2.2
-torchvision       0.2.1
-scikit-learn      0.20.0
-PyGSP             0.5.1
+gensim            3.6.0
 ```
 ### Datasets
 
-The code takes the **edge list** of the graph in a csv file. Every row indicates an edge between two nodes separated by a comma. The first row is a header. Nodes should be indexed starting with 0. A sample graph for `Cora` is included in the  `input/` directory. In addition to the edgelist there is a JSON file with the sparse features and a csv with the target variable.
-
-The **feature matrix** is a sparse binary one it is stored as a json. Nodes are keys of the json and feature indices are the values. For each node feature column ids are stored as elements of a list. The feature matrix is structured as:
-
-```javascript
-{ 0: [0, 1, 38, 1968, 2000, 52727],
-  1: [10000, 20, 3],
-  2: [],
-  ...
-  n: [2018, 10000]}
-```
-
-The **target vector** is a csv with two columns and headers, the first contains the node identifiers the second the targets. This csv is sorted by node identifiers and the target column contains the class meberships indexed from zero. 
-
-| **NODE ID**| **Target** |
-| --- | --- |
-| 0 | 3 |
-| 1 | 1 |
-| 2 | 0 |
-| 3 | 1 |
-| ... | ... |
-| n | 3 |
-
-### Options
+The code takes the **edge list** of the graph in a csv file. Every row indicates an edge between two nodes separated by a comma. The first row is a header. Nodes should be indexed starting with 0. A sample graph for `Cora` is included in the  `input/` directory. 
 
 Training the model is handled by the `src/main.py` script which provides the following command line arguments.
 

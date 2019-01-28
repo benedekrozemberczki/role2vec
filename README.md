@@ -84,4 +84,9 @@ python src/main.py
 <p align="center">
 <img style="float: center;" src="gwnn_run.jpg">
 </p>
-
+```
+python src/main.py --feature motif --motif-compression factorization
+```
+```
+python src/main.py --dimensions 32
+```

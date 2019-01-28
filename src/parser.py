@@ -29,16 +29,16 @@ def parameter_parser():
     parser.add_argument('--dimensions',
                         type = int,
                         default = 128,
-	                help = 'Number of dimensions. Default is 16.')
+	                help = 'Number of dimensions. Default is 128.')
 
     parser.add_argument('--walk-number',
                         type = int,
-                        default = 3,
-	                help = 'Number of walks. Default is 5.')
+                        default = 10,
+	                help = 'Number of random walks. Default is 10.')
 
     parser.add_argument('--walk-length',
                         type = int,
-                        default = 10,
+                        default = 80,
 	                help = 'Walk length. Default is 80.')
 
     parser.add_argument('--sampling',
@@ -48,38 +48,38 @@ def parameter_parser():
 
     parser.add_argument('--P',
                         type = float,
-                        default = 4.00,
-	                help = 'Number of walks. Default is 1.0.')
+                        default = 1.00,
+	                help = 'Return parameter. Default is 1.0.')
 
     parser.add_argument('--Q',
                         type = float,
                         default = 0.25,
-	                help = 'Number of walks. Default is 1.0.')
+	                help = 'Inout parameter. Default is 1.0.')
 
     parser.add_argument('--down-sampling',
                         type = float,
-                        default = 0.0001,
-	                help = 'Number of walks. Default is 1.0.')
+                        default = 0.001,
+	                help = 'Down sampling frequency. Default is 0.001.')
 
     parser.add_argument('--alpha',
                         type = float,
                         default = 0.025,
-	                help = 'Number of walks. Default is 1.0.')
+	                help = 'Initial learning rate. Default is 0.025.')
 
     parser.add_argument('--min-alpha',
                         type = float,
                         default = 0.025,
-	                help = 'Number of walks. Default is 1.0.')
+	                help = 'Final learning rate. Default is 0.025.')
 
     parser.add_argument('--window-size',
                         type = int,
                         default = 5,
-	                help = 'Number of neighbor embeddings. Default is 3.')
+	                help = 'Window size for skip-gram. Default is 5.')
 
     parser.add_argument('--min-count',
                         type = int,
                         default = 1,
-	                help = 'Number of neighbor embeddings. Default is 3.')
+	                help = 'Minimal feature count. Default is 1.')
 
     parser.add_argument('--workers',
                         type = int,
@@ -89,39 +89,39 @@ def parameter_parser():
     parser.add_argument('--epochs',
                         type = int,
                         default = 10,
-	                help = 'Number of cores. Default is 10.')
+	                help = 'Number of epochs. Default is 10.')
 
     parser.add_argument('--labeling-iterations',
                         type = int,
                         default = 2,
-	                help = 'Number of cores. Default is 4.')
+	                help = 'Number of WL labeling iterations. Default is 2.')
 
     parser.add_argument('--log-base',
                         type = int,
                         default = 1.5,
-	                help = 'Number of cores. Default is 4.')
+	                help = 'Log base for label creation. Default is 1.5.')
 
 
     parser.add_argument('--graphlet-size',
                         type = int,
-                        default = 3,
-	                help = 'Number of cores. Default is 10.')
+                        default = 4,
+	                help = 'Maximal graphlet size. Default is 4.')
 
     parser.add_argument('--quantiles',
                         type = int,
                         default = 5,
-	                help = 'Number of cores. Default is 10.')
+	                help = 'Number of quantiles for binning. Default is 5.')
 
     parser.add_argument('--motif-compression',
                         nargs = '?',
                         default = 'string',
-	                help = 'Embeddings path.')
+	                help = 'Motif compression procedure -- string or factorization.')
 
 
     parser.add_argument('--seed',
                         type = int,
-                        default = 10,
-	                help = 'Number of cores. Default is 10.')
+                        default = 42,
+	                help = 'Sklearn random seed. Default is 42.')
 
     parser.add_argument('--factors',
                         type = int,

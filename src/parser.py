@@ -3,7 +3,7 @@ import argparse
 def parameter_parser():
 
     """
-    A method to parse up command line parameters. By default it gives an embedding of the Facebook food dataset.
+    A method to parse up command line parameters.
     The default hyperparameters give a good quality representation without grid search.
     Representations are sorted by ID.
     """
@@ -126,16 +126,16 @@ def parameter_parser():
     parser.add_argument('--factors',
                         type = int,
                         default = 8,
-	                help = 'Number of cores. Default is 10.')
+	                help = 'Number of factors for motif compression. Default is 8.')
 
     parser.add_argument('--clusters',
                         type = int,
                         default = 50,
-	                help = 'Number of cores. Default is 10.')
+	                help = 'Number of motif based labels. Default is 50.')
 
     parser.add_argument('--beta',
                         type = float,
                         default = 0.01,
-	                help = 'Number of cores. Default is 10.')
+	                help = 'Motif compression factorization regularizer. Default is 0.01.')
 
     return parser.parse_args()

@@ -1,8 +1,5 @@
 import networkx as nx
 import pandas as pd
-import json
-import random
-import pandas as pd
 from texttable import Texttable
 from gensim.models.doc2vec import TaggedDocument
 

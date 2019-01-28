@@ -45,7 +45,7 @@ def parameter_parser():
 
     parser.add_argument('--Q',
                         type = float,
-                        default = 0.25,
+                        default = 1.00,
 	                help = 'Inout parameter. Default is 1.0.')
 	
     parser.add_argument('--dimensions',

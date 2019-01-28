@@ -1,14 +1,11 @@
-import json
-import random
 import math
-import logging
 import numpy as np
 import pandas as pd
 import networkx as nx
 from tqdm import tqdm
 from gensim.models.doc2vec import Doc2Vec
-from walkers import FirstOrderRandomWalker, SecondOrderRandomWalker
 from utils import load_graph, create_documents
+from walkers import FirstOrderRandomWalker, SecondOrderRandomWalker
 from weisfeiler_lehman_labeling import WeisfeilerLehmanMachine
 from motif_count import MotifCounterMachine
 

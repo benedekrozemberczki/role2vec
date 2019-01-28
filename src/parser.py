@@ -1,15 +1,12 @@
 import argparse
 
 def parameter_parser():
-
     """
     A method to parse up command line parameters.
     The default hyperparameters give a good quality representation without grid search.
     Representations are sorted by ID.
     """
-
-    parser = argparse.ArgumentParser(description = "Run .")
-
+    parser = argparse.ArgumentParser(description = "Run Role2Vec.")
 
     parser.add_argument('--graph-input',
                         nargs = '?',
@@ -101,7 +98,6 @@ def parameter_parser():
                         default = 1.5,
 	                help = 'Log base for label creation. Default is 1.5.')
 
-
     parser.add_argument('--graphlet-size',
                         type = int,
                         default = 4,
@@ -116,7 +112,6 @@ def parameter_parser():
                         nargs = '?',
                         default = 'string',
 	                help = 'Motif compression procedure -- string or factorization.')
-
 
     parser.add_argument('--seed',
                         type = int,

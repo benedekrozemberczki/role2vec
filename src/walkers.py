@@ -9,6 +9,11 @@ class SecondOrderRandomWalker:
     """
     def __init__(self, G, p, q, num_walks, walk_length):
         """
+        :param G: NetworkX object.
+        :param p: Return parameter.
+        :param q: In-out parameter.
+        :param num_walks: Number of walks per source.
+        :param walk_length: Number of nodes in walk.
         """
         self.G = G
         self.nodes = nx.nodes(self.G)
@@ -158,7 +163,7 @@ class FirstOrderRandomWalker:
     Class to create first order random walks.
     """
     def __init__(self, G, num_walks, walk_length):
-
+       
         self.G = G
         self.num_walks = num_walks
         self.walk_length = walk_length

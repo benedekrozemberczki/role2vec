@@ -123,6 +123,9 @@ class MotifCounterMachine(object):
         return features
 
     def create_string_labels(self):
+        """
+        Executing the whole label creation mechanism.
+        """
         self.create_edge_subsets()
         self.enumerate_graphs()
         self.enumerate_categories()

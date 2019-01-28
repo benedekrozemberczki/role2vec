@@ -16,7 +16,9 @@ def tab_printer(args):
 
 def load_graph(graph_path):
     """
-
+    Reading an edge list csv to an NX graph object.
+    :param graph_path: Path to the edhe list csv.
+    :return graph: NetworkX object.
     """
     graph = nx.from_edgelist(pd.read_csv(graph_path).values.tolist())
     graph.remove_edges_from(graph.selfloop_edges())

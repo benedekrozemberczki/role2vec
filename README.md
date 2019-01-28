@@ -85,6 +85,7 @@ python src/main.py
 <img width="600", style="float: center;" src="role2vec_run.jpg">
 </p>
 
+Using the degree centrality as a structural feature.
 ```
 python src/main.py --features degree
 ```

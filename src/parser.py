@@ -17,11 +17,6 @@ def parameter_parser():
                         nargs = '?',
                         default = './output/cora_role2vec.csv',
 	                help = 'Embeddings path.')
-
-    parser.add_argument('--dimensions',
-                        type = int,
-                        default = 128,
-	                help = 'Number of dimensions. Default is 128.')
 	
     parser.add_argument('--window-size',
                         type = int,
@@ -52,6 +47,11 @@ def parameter_parser():
                         type = float,
                         default = 0.25,
 	                help = 'Inout parameter. Default is 1.0.')
+	
+    parser.add_argument('--dimensions',
+                        type = int,
+                        default = 128,
+	                help = 'Number of dimensions. Default is 128.')
 
     parser.add_argument('--down-sampling',
                         type = float,

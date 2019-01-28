@@ -101,7 +101,7 @@ python src/main.py --features motif --motif-compression factorization --clusters
 ```
 python src/main.py --dimensions 32
 ```
-
+Using second-order attributed ranom walks for sampling.
 ```
 python src/main.py --sampling second --P 1 --Q 4
 ```

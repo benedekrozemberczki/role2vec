@@ -1,6 +1,7 @@
 from parser import parameter_parser
 from role2vec import Role2Vec
 from utils import tab_printer
+
 def main(args):
     """
     Role2Vec model fitting.

@@ -154,6 +154,9 @@ def alias_draw(J, q):
 
 
 class FirstOrderRandomWalker:
+    """
+    Class to create first order random walks.
+    """
     def __init__(self, G, num_walks, walk_length):
 
         self.G = G

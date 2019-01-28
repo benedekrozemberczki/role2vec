@@ -62,18 +62,17 @@ Training the model is handled by the `src/main.py` script which provides the fol
 #### Feature creation options
 
 ```
-  --features
-  --labeling-iterations
-  --log-base
-  --graphlet-size
-  --quantiles
-  --motif-compression
-  --seed
-  --factors
-  --clusters
-  --beta
+  --features               STR
+  --labeling-iterations    INT
+  --log-base               FLOAT
+  --graphlet-size          INT
+  --quantiles              INT
+  --motif-compression      STR
+  --seed                   INT
+  --factors                INT
+  --clusters               INT
+  --beta                   FLOAT
 ```
-
 
 ### Examples
 

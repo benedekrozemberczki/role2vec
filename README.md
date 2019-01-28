@@ -39,23 +39,20 @@ Training the model is handled by the `src/main.py` script which provides the fol
 ```
   --edge-path        STR   Input graph path.   Default is `input/cora_edges.csv`.
   --embedding-path         STR   Log path.           Default is `logs/cora_logs.json`.
-  --log-path         STR   Log path.           Default is `logs/cora_logs.json`.
 ```
 
-#### Model options
+#### Random walk options
 
 ```
   --epochs                INT       Number of Adam epochs.         Default is 300.
   --learning-rate         FLOAT     Number of training epochs.     Default is 0.001.
-  --weight-decay          FLOAT     Weight decay.                  Default is 5*10**-4.
-  --filters               INT       Number of filters.             Default is 16.
-  --dropout               FLOAT     Dropout probability.           Default is 0.5.
-  --test-size             FLOAT     Test set ratio.                Default is 0.2.
-  --seed                  INT       Random seeds.                  Default is 42.
-  --approximation-order   INT       Chebyshev polynomial order.    Default is 20.
-  --tolerance             FLOAT     Wavelet coefficient limit.     Default is 10**-4.
-  --scale                 FLOAT     Heat kernel scale.             Default is 1.0.
 ```
+
+#### Factorization options
+
+#### Feature creation options
+
+
 
 ### Examples
 

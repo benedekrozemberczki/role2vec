@@ -86,7 +86,7 @@ def parameter_parser():
     parser.add_argument('--features',
                         nargs = '?',
                         default = 'wl',
-	                help = 'Embeddings path.')
+	                help = 'Feature extraction mechanism. Default is wl.')
 
     parser.add_argument('--labeling-iterations',
                         type = int,

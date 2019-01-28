@@ -64,6 +64,7 @@ class Role2Vec:
 
     def create_embedding(self):
         """
+        Fitting an embedding.
         """
         document_collections = create_documents(self.pooled_features)
 
@@ -83,6 +84,7 @@ class Role2Vec:
 
     def learn_embedding(self):
         """
+        Pooling the features and learning an embedding.
         """
         self.pooled_features = self.create_pooled_features()
         self.embedding = self.create_embedding()
@@ -90,14 +92,9 @@ class Role2Vec:
     def save_embedding(self):
         """
         Function to save the embedding.
-        :param output_path: Path to the embedding csv.
-        :param model: The embedding model object.
-        :param files: The list of files.
-        :param dimensions: The embedding dimension parameter.
         """
         columns = ["id"] + [ "x_" +str(x) for x in range(self.embedding.shape[1])]
         ids = np.array([node for node in self.graph.nodes()]).reshape(-1,1)
         self.embedding = pd.DataFrame(np.concatenate([ids, self.embedding], axis = 1), columns = columns)
         self.embedding = self.embedding.sort_values(by=['id'])
         self.embedding.to_csv(self.args.output, index = None)
-

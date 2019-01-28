@@ -163,7 +163,11 @@ class FirstOrderRandomWalker:
     Class to create first order random walks.
     """
     def __init__(self, G, num_walks, walk_length):
-       
+        """
+        :param G: NetworkX graph object.
+        :param num_walks: Number of walks per source node.
+        :param walk_length: Number of nodes in turnctaed randonm walk.
+        """
         self.G = G
         self.num_walks = num_walks
         self.walk_length = walk_length

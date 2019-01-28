@@ -40,24 +40,33 @@ Training the model is handled by the `src/main.py` script which provides the fol
   --edge-path        STR   Input graph path.   Default is `input/cora_edges.csv`.
   --embedding-path         STR   Log path.           Default is `logs/cora_logs.json`.
 ```
-
 #### Random walk options
-
 ```
-  --epochs                INT       Number of Adam epochs.         Default is 300.
-  --learning-rate         FLOAT     Number of training epochs.     Default is 0.001.
+  --window-size      INT    Skip-gram window size.        Default is 5.
+  --walk-number      INT    Number of walks per node.     Default is 10.
+  --walk-length      INT    Number of nodes in walk.      Default is 80.
+  --sampling         STR    Sampling procedure.           Default is `first`.
+  --P                FLOAT  Return parameter.             Default is 1.0.
+  --Q                FLOAT  Inout parameter.              Default is 1.0.
 ```
-
 #### Factorization options
 ```
-  --epochs                INT       Number of Adam epochs.         Default is 300.
-  --learning-rate         FLOAT     Number of training epochs.     Default is 0.001.
+  --window size                INT       Number of Adam epochs.         Default is 300.
+  --walk-number         FLOAT     Number of training epochs.     Default is 0.001.
+  --
 ```
 
 #### Feature creation options
 
 ```
   --epochs                INT       Number of Adam epochs.         Default is 300.
+  --learning-rate         FLOAT     Number of training epochs.     Default is 0.001.
+  --learning-rate         FLOAT     Number of training epochs.     Default is 0.001.
+  --learning-rate         FLOAT     Number of training epochs.     Default is 0.001.
+  --learning-rate         FLOAT     Number of training epochs.     Default is 0.001.
+  --learning-rate         FLOAT     Number of training epochs.     Default is 0.001.
+  --learning-rate         FLOAT     Number of training epochs.     Default is 0.001.
+  --learning-rate         FLOAT     Number of training epochs.     Default is 0.001.
   --learning-rate         FLOAT     Number of training epochs.     Default is 0.001.
 ```
 

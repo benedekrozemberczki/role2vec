@@ -11,7 +11,7 @@ def parameter_parser():
     parser.add_argument('--graph-input',
                         nargs = '?',
                         default = "./input/cora_edges.csv",
-	                help = 'Input folder with jsons.')
+	                help = 'Input graph path -- edge list csv.')
 
     parser.add_argument('--output',
                         nargs = '?',

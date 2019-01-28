@@ -87,15 +87,19 @@ python src/main.py
 ```
 python src/main.py --features degree
 ```
+
 ```
 python src/main.py --features motif --motif-compression factorization
 ```
+
 ```
 python src/main.py --features motif --motif-compression factorization --clusters 40
 ```
+
 ```
 python src/main.py --dimensions 32
 ```
+
 ```
 python src/main.py --sampling second --P 1 --Q 4
 ```

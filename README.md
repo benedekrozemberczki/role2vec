@@ -49,6 +49,10 @@ Training the model is handled by the `src/main.py` script which provides the fol
 ```
 
 #### Factorization options
+```
+  --epochs                INT       Number of Adam epochs.         Default is 300.
+  --learning-rate         FLOAT     Number of training epochs.     Default is 0.001.
+```
 
 #### Feature creation options
 

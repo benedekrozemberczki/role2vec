@@ -5,8 +5,11 @@ import random
 
 class SecondOrderRandomWalker:
     """
+    Class to create second order random walks.
     """
     def __init__(self, G, p, q, num_walks, walk_length):
+        """
+        """
         self.G = G
         self.nodes = nx.nodes(self.G)
         print("Edge weighting.\n")
@@ -182,6 +185,3 @@ class FirstOrderRandomWalker:
             for node in tqdm(self.G.nodes()):
                 walk_from_node = self.do_walk(node)
                 self.walks.append(walk_from_node)
-
-
-

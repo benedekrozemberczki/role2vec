@@ -47,7 +47,7 @@ class MotifCounterMachine(object):
         graphs = graph_atlas_g()
         self.interesting_graphs = {i:[] for i in range(2,self.args.graphlet_size+1)}
         for graph in graphs:
-            if graph.number_of_nodes()>1 and  graph.number_of_nodes()<self.args.graphlet_size+1:
+            if graph.number_of_nodes() > 1 and  graph.number_of_nodes() < self.args.graphlet_size+1:
                 if nx.is_connected(graph):
                     self.interesting_graphs[graph.number_of_nodes()].append(graph)
 
@@ -68,6 +68,9 @@ class MotifCounterMachine(object):
         self.unique_motif_count = main_index + 1
 
     def setup_features(self):
+        """
+        Calculating the graphlet orbit counts.
+        """
         self.features = {node: {i:0 for i in range(self.unique_motif_count)}for node in self.graph.nodes()}
         for size, node_lists in self.edge_subsets.items():
             graphs = self.interesting_graphs[size]
@@ -81,6 +84,9 @@ class MotifCounterMachine(object):
 
 
     def create_tabular_motifs(self):
+        """
+        Creating tabular motifs for factorization.
+        """
         self.binned_features = {node:[] for node in self.graph.nodes()}
         self.motifs = [[node]+[self.features[node][index] for index in  range(self.unique_motif_count )] for node in self.graph.nodes()]
         self.motifs = pd.DataFrame(self.motifs)

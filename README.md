@@ -1,6 +1,6 @@
 Role2Vec
 ============================================
-A scalable parallel Gensim implementation of "Learning Role-based Graph Embeddings".
+A scalable parallel Gensim implementation of "Learning Role-based Graph Embeddings" (IJCAI 2018).
 <p align="center">
   <img width="500" src="orbit.png">
 </p>
@@ -89,11 +89,11 @@ Using the degree centrality as a structural feature.
 ```
 python src/main.py --features degree
 ```
-
+Using motif based structural features with factorization compression.
 ```
 python src/main.py --features motif --motif-compression factorization
 ```
-
+Using motif based structural features with factorization compression and a structural label number of 40.
 ```
 python src/main.py --features motif --motif-compression factorization --clusters 40
 ```

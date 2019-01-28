@@ -8,14 +8,24 @@ from sklearn.decomposition import NMF
 from sklearn.cluster import KMeans
 
 class MotifCounterMachine(object):
-
+    """
+    Motif and Orbit Counting Tool.
+    """
     def __init__(self, graph, args):
+        """
+        Initializing the object.
+        :param graph: NetworkX graph.
+        :param args: Arguments object.
+        """
         self.graph = graph
         self.args = args
 
     def create_edge_subsets(self):
+        """
+        Collecting nodes that form graphlets.
+        """
         self.edge_subsets = dict()
-        subsets = [[edge[0],edge[1]] for edge in self.graph.edges()]
+        subsets = [[edge[0], edge[1]] for edge in self.graph.edges()]
         self.edge_subsets[2] = subsets
         unique_subsets = dict()
         for i in range(3,self.args.graphlet_size+1):

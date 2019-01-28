@@ -11,7 +11,7 @@ This repository provides an implementation of Graph Wavelet Neural Network as de
 
 > Learning Role-based Graph Embeddings.
 > Nesreen K. Ahmed, Ryan Rossi, John Boaz Lee, Theodore L. Willke, Rong Zhou, Xiangnan Kong, Hoda Eldardiry.
-> ArXiV, 2018.
+> StarAI workshop - IJCAI, 2018.
 > [[Paper]](https://arxiv.org/abs/1802.02896)
 
 ### Requirements

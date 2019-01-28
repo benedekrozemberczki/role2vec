@@ -11,18 +11,19 @@ from motif_count import MotifCounterMachine
 
 class Role2Vec:
     """
+    Role2Vec model class.
     """
     def __init__(self, args):
         """
         Role2Vec machine constructor.
-        :param args: Arguments object with the model hyperparameters. 
+        :param args: Arguments object with the model hyperparameters.
         """
         self.args = args
         self.graph = load_graph(args.graph_input)
 
     def do_walks(self):
         """
-        
+        Doing first/second order random walks.
         """
         if self.args.sampling == "second":
             self.sampler = SecondOrderRandomWalker(self.graph, self.args.P, self.args.Q,  self.args.walk_number, self.args.walk_length)

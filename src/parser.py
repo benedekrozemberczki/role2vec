@@ -18,15 +18,15 @@ def parameter_parser():
                         default = './output/cora_role2vec.csv',
 	                help = 'Embeddings path.')
 
-    parser.add_argument('--features',
-                        nargs = '?',
-                        default = 'wl',
-	                help = 'Embeddings path.')
-
     parser.add_argument('--dimensions',
                         type = int,
                         default = 128,
 	                help = 'Number of dimensions. Default is 128.')
+	
+    parser.add_argument('--window-size',
+                        type = int,
+                        default = 5,
+	                help = 'Window size for skip-gram. Default is 5.')
 
     parser.add_argument('--walk-number',
                         type = int,
@@ -68,11 +68,6 @@ def parameter_parser():
                         default = 0.025,
 	                help = 'Final learning rate. Default is 0.025.')
 
-    parser.add_argument('--window-size',
-                        type = int,
-                        default = 5,
-	                help = 'Window size for skip-gram. Default is 5.')
-
     parser.add_argument('--min-count',
                         type = int,
                         default = 1,
@@ -87,6 +82,11 @@ def parameter_parser():
                         type = int,
                         default = 10,
 	                help = 'Number of epochs. Default is 10.')
+	
+    parser.add_argument('--features',
+                        nargs = '?',
+                        default = 'wl',
+	                help = 'Embeddings path.')
 
     parser.add_argument('--labeling-iterations',
                         type = int,

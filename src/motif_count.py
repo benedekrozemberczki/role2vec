@@ -1,11 +1,11 @@
+import math
 import pandas as pd
 import networkx as nx
-from networkx.generators.atlas import *
 from tqdm import tqdm
-import math
+from sklearn.cluster import KMeans
 from scipy.sparse import csr_matrix
 from sklearn.decomposition import NMF
-from sklearn.cluster import KMeans
+from networkx.generators.atlas import *
 
 class MotifCounterMachine(object):
     """
@@ -41,6 +41,9 @@ class MotifCounterMachine(object):
             unique_subsets = dict()
 
     def enumerate_graphs(self):
+        """
+        Enumerating connected benchmark graphlets.
+        """
         graphs = graph_atlas_g()
         self.interesting_graphs = {i:[] for i in range(2,self.args.graphlet_size+1)}
         for graph in graphs:
@@ -49,6 +52,9 @@ class MotifCounterMachine(object):
                     self.interesting_graphs[graph.number_of_nodes()].append(graph)
 
     def enumerate_categories(self):
+        """
+        Enumerating orbits in graphlets.
+        """
         main_index = 0
         self.categories = dict()
         for size, graphs in self.interesting_graphs.items():

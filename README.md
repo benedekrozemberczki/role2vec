@@ -97,7 +97,7 @@ Using motif based structural features with factorization compression and a struc
 ```
 python src/main.py --features motif --motif-compression factorization --clusters 40
 ```
-
+Using a custom factorization dimension for the embedding.
 ```
 python src/main.py --dimensions 32
 ```

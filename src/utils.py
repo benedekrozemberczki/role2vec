@@ -27,7 +27,9 @@ def load_graph(graph_path):
 
 def create_documents(features):
     """
-
+    Created tagged documents object from a dictionary.
+    :param features: Keys are document ids and values are strings of the document.
+    :return docs: List of tagged documents.
     """
     docs = [TaggedDocument(words = v, tags = [str(k)]) for k, v in features.items()]
     return docs

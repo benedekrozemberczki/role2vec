@@ -82,7 +82,7 @@ The following commands learn  the weights of a graph wavelet neural network and 
 python src/main.py
 ```
 <p align="center">
-<img style="float: center;" src="gwnn_run.jpg">
+<img style="float: center;" src="role2vec_run.jpg">
 </p>
 
 ```

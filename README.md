@@ -62,16 +62,16 @@ Training the model is handled by the `src/main.py` script which provides the fol
 #### Feature creation options
 
 ```
-  --features               STR
-  --labeling-iterations    INT
-  --log-base               FLOAT
-  --graphlet-size          INT
-  --quantiles              INT
-  --motif-compression      STR
-  --seed                   INT
-  --factors                INT
-  --clusters               INT
-  --beta                   FLOAT
+  --features               STR     Feature extraction mechanism.         Default is `wl`.
+  --labeling-iterations    INT     Number of WL labeling iterations.     Default is 2.
+  --log-base               FLOAT   Log base for label creation.          Default is 1.5.
+  --graphlet-size          INT     Maximal graphlet size.                Default is 4.
+  --quantiles              INT     Number of quantiles for binning.      Default is 5.
+  --motif-compression      STR     Motif compression procedure.          Default is `string`.
+  --seed                   INT     Sklearn random seed.                  Default is 42.
+  --factors                INT     Factors for motif compression.        Default is 8.
+  --clusters               INT     Number of motif based labels.         Default is 50.
+  --beta                   FLOAT   Motif compression regularizer.        Default is 0.01.
 ```
 
 ### Examples
@@ -85,14 +85,3 @@ python src/main.py
 <img style="float: center;" src="gwnn_run.jpg">
 </p>
 
-Training a model with more filters in the first layer.
-
-```
-python src/main.py --filters 32
-```
-
-Approximationg the wavelets with polynomials that have an order of 5.
-
-```
-python src/main.py --approximation-order 5
-```

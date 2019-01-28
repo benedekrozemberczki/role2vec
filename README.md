@@ -35,10 +35,9 @@ The code takes the **edge list** of the graph in a csv file. Every row indicates
 Training the model is handled by the `src/main.py` script which provides the following command line arguments.
 
 #### Input and output options
-
 ```
-  --edge-path        STR   Input graph path.   Default is `input/cora_edges.csv`.
-  --embedding-path         STR   Log path.           Default is `logs/cora_logs.json`.
+  --graph-input      STR   Input graph path.   Default is `input/cora_edges.csv`.
+  --output           STR   Embeddings path.    Default is `output/cora_role2vec.csv`.
 ```
 #### Random walk options
 ```
@@ -47,13 +46,17 @@ Training the model is handled by the `src/main.py` script which provides the fol
   --walk-length      INT    Number of nodes in walk.      Default is 80.
   --sampling         STR    Sampling procedure.           Default is `first`.
   --P                FLOAT  Return parameter.             Default is 1.0.
-  --Q                FLOAT  Inout parameter.              Default is 1.0.
+  --Q                FLOAT  In-out parameter.             Default is 1.0.
 ```
 #### Factorization options
 ```
-  --window size                INT       Number of Adam epochs.         Default is 300.
-  --walk-number         FLOAT     Number of training epochs.     Default is 0.001.
-  --
+  --dimensions      INT      Number of dimensions.      Default is 128
+  --down-sampling   FLOAT    Down sampling frequency.   Default is 0.001.
+  --alpha           FLOAT    Initial learning rate.     Default is 0.025.
+  --min-alpha       FLOAT    Final learning rate.       Default is 0.025.
+  --min-count       INT      Minimal feature count.     Default is 1
+  --workers         INT      Number of cores.           Default is 4.
+  --epochs          INT      Number of epochs.          Default is 10.
 ```
 
 #### Feature creation options

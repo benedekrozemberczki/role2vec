@@ -33,6 +33,9 @@ class Role2Vec:
         del self.sampler
 
     def create_structural_features(self):
+        """
+        Extracting structural features.
+        """
         if self.args.features == "wl":
             features = {str(node): str(int(math.log(self.graph.degree(node)+1,self.args.log_base))) for node in self.graph.nodes()}
             machine = WeisfeilerLehmanMachine(self.graph, features, self.args.labeling_iterations)
@@ -46,6 +49,7 @@ class Role2Vec:
 
     def create_pooled_features(self):
         """
+        Pooling the features with the walks
         """
         features = {str(node):[] for node in self.graph.nodes()}
         for walk in self.walks:
@@ -58,7 +62,7 @@ class Role2Vec:
         return features
    
 
-    def create_single_embedding(self):
+    def create_embedding(self):
         """
         """
         document_collections = create_documents(self.pooled_features)
@@ -81,7 +85,7 @@ class Role2Vec:
         """
         """
         self.pooled_features = self.create_pooled_features()
-        self.embedding = self.create_single_embedding()
+        self.embedding = self.create_embedding()
 
     def save_embedding(self):
         """

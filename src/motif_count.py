@@ -99,11 +99,16 @@ class MotifCounterMachine(object):
                 for node in self.graph.nodes():
                     self.binned_features[node].append(str(int(index*self.args.quantiles + features[node])))
 
-
     def join_strings(self):
+        """
+        Creating string labels by joining the individual quantile labels.
+        """
         return {str(node): ["_".join(self.binned_features[node])] for node in self.graph.nodes()}
 
     def factorize_string_matrix(self):
+        """
+        Creating string labels by factorization.
+        """
         rows = [node for node, features in self.binned_features.items() for feature in features]
         columns = [int(feature) for node, features in self.binned_features.items() for feature in features]
         scores = [1 for i in range(len(columns))]
@@ -116,7 +121,6 @@ class MotifCounterMachine(object):
         labels = kmeans.labels_
         features = {str(node): str(labels[node]) for node in self.graph.nodes()}
         return features
-
 
     def create_string_labels(self):
         self.create_edge_subsets()

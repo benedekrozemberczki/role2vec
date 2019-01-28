@@ -88,7 +88,7 @@ class MotifCounterMachine(object):
         row_number = max(rows)+1
         column_number = max(columns)+1
         features = csr_matrix((scores, (rows, columns)), shape=(row_number, column_number))
-        model = NMF(n_components=self.args.factors, init='random', random_state=self.args.seed)
+        model = NMF(n_components=self.args.factors, init='random', random_state=self.args.seed, alpha = self.args.beta)
         factors = model.fit_transform(features)
         kmeans = KMeans(n_clusters=self.args.clusters, random_state=self.args.seed).fit(factors)
         labels = kmeans.labels_
@@ -107,11 +107,3 @@ class MotifCounterMachine(object):
         else:
             features = self.factorize_string_matrix()
         return features
-                
-        
-                    
-                  
-           
-                
-            
-         

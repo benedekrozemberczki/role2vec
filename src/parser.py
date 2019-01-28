@@ -112,6 +112,12 @@ def parameter_parser():
                         default = 5,
 	                help = 'Number of cores. Default is 10.')
 
+    parser.add_argument('--motif-compression',
+                        nargs = '?',
+                        default = 'string',
+	                help = 'Embeddings path.')
+
+
     parser.add_argument('--seed',
                         type = int,
                         default = 10,
@@ -127,9 +133,9 @@ def parameter_parser():
                         default = 50,
 	                help = 'Number of cores. Default is 10.')
 
-    parser.add_argument('--motif-compression',
-                        nargs = '?',
-                        default = 'string',
-	                help = 'Embeddings path.')
+    parser.add_argument('--beta',
+                        type = float,
+                        default = 0.01,
+	                help = 'Number of cores. Default is 10.')
 
     return parser.parse_args()

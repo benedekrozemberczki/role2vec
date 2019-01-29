@@ -89,6 +89,10 @@ Using the degree centrality as a structural feature.
 ```
 python src/main.py --features degree
 ```
+Using the Weisfeiler-Lehman labeling as a structural feature.
+```
+python src/main.py --features wl
+```
 Using motif based structural features with factorization compression.
 ```
 python src/main.py --features motif --motif-compression factorization

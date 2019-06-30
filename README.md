@@ -1,4 +1,4 @@
-Role2Vec 	 ![GitHub stars](https://img.shields.io/github/stars/benedekrozemberczki/CapsGNN.svg?style=plastic) ![GitHub forks](https://img.shields.io/github/forks/benedekrozemberczki/CapsGNN.svg?color=blue&style=plastic) ![License](https://img.shields.io/github/license/benedekrozemberczki/CapsGNN.svg?color=blue&style=plastic)
+Role2Vec 	 ![GitHub stars](https://img.shields.io/github/stars/benedekrozemberczki/role2vec.svg?style=plastic) ![GitHub forks](https://img.shields.io/github/forks/benedekrozemberczki/role2vec.svg?color=blue&style=plastic) ![License](https://img.shields.io/github/license/benedekrozemberczki/role2vec.svg?color=blue&style=plastic)
 ============================================
 A scalable parallel Gensim implementation of "Learning Role-based Graph Embeddings" (IJCAI 2018).
 <p align="center">

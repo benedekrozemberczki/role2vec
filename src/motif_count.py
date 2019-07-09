@@ -82,7 +82,6 @@ class MotifCounterMachine(object):
                             self.features[node][self.categories[size][index][sub_gr.degree(node)]] += 1
                         break
 
-
     def create_tabular_motifs(self):
         """
         Creating tabular motifs for factorization.

@@ -4,10 +4,10 @@ import pandas as pd
 import networkx as nx
 from tqdm import tqdm
 from gensim.models.doc2vec import Doc2Vec
-from utils import load_graph, create_documents
 from motif_count import MotifCounterMachine
-from walkers import FirstOrderRandomWalker, SecondOrderRandomWalker
+from utils import load_graph, create_documents
 from weisfeiler_lehman_labeling import WeisfeilerLehmanMachine
+from walkers import FirstOrderRandomWalker, SecondOrderRandomWalker
 
 class Role2Vec:
     """

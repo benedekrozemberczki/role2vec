@@ -29,7 +29,7 @@ class WeisfeilerLehmanMachine:
         for node in self.nodes:
             nebs = self.graph.neighbors(node)
             degs = [self.features[str(neb)] for neb in nebs]
-            features = "_".join([str(self.features[str(node)])]+list(set(sorted([str(deg) for deg in degs]))))
+            features = "_".join([str(self.features[str(node)])]+sorted([str(deg) for deg in degs]))
             hash_object = hashlib.md5(features.encode())
             hashing = hash_object.hexdigest()
             new_features[str(node)] = hashing

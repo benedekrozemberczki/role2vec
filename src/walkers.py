@@ -181,9 +181,9 @@ class FirstOrderRandomWalker:
         """
         walk = [node]
         while len(walk) < self.walk_length:
-            if len(nx.neighbors(self.graph,walk[-1])) == 0:
+            if len(nx.neighbors(self.G,walk[-1])) == 0:
                 break
-            walk = walk + [random.sample(nx.neighbors(self.graph,walk[-1]),1)[0]]
+            walk = walk + [random.sample(nx.neighbors(self.G,walk[-1]),1)[0]]
         return walk
 
     def simulate_walks(self):

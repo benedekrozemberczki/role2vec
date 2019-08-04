@@ -180,11 +180,10 @@ class FirstOrderRandomWalker:
         :return walk: A single random walk.
         """
         walk = [node]
-        for step in range(self.walk_length-1):
-            nebs = [node for node in self.G.neighbors(walk[-1])]
-            if len(nebs)>0:
-                walk = walk + random.sample(nebs,1) 
-        walk = [str(x) for x in walk]
+        while len(walk) < self.walk_length:
+            if len(nx.neighbors(self.graph,walk[-1])) == 0:
+                break
+            walk = walk + [random.sample(nx.neighbors(self.graph,walk[-1]),1)[0]]
         return walk
 
     def simulate_walks(self):

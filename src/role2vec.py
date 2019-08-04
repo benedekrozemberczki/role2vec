@@ -61,7 +61,6 @@ class Role2Vec:
         features = {node: [feature for feature_elems in feature_set for feature in feature_elems] for node, feature_set in features.items()}
         return features
    
-
     def create_embedding(self):
         """
         Fitting an embedding.

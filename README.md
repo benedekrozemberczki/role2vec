@@ -34,10 +34,10 @@ gensim            3.6.0
 scikit-learn      0.20.0
 ```
 ### Datasets
-
-The code takes the **edge list** of the graph in a csv file. Every row indicates an edge between two nodes separated by a comma. The first row is a header. Nodes should be indexed starting with 0. A sample graph for `Cora` is included in the  `input/` directory. 
-
-Training the model is handled by the `src/main.py` script which provides the following command line arguments.
+<p align="justify">
+The code takes the **edge list** of the graph in a csv file. Every row indicates an edge between two nodes separated by a comma. The first row is a header. Nodes should be indexed starting with 0. A sample graph for `Cora` is included in the  `input/` directory. </p>
+<p align="justify">
+Training the model is handled by the `src/main.py` script which provides the following command line arguments.</p>
 
 #### Input and output options
 ```
@@ -80,7 +80,8 @@ Training the model is handled by the `src/main.py` script which provides the fol
 ```
 
 ### Examples
-The following commands learn a Role2Vec embedding. The first example trains an embedding based on the default dataset with standard hyperparameter settings.  The script saves the embedding at the default path.
+<p align="justify">
+The following commands learn a Role2Vec embedding. The first example trains an embedding based on the default dataset with standard hyperparameter settings.  The script saves the embedding at the default path.</p>
 ```
 python src/main.py
 ```

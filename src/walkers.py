@@ -1,3 +1,5 @@
+"""Random walker machines."""
+
 import random
 import numpy as np
 import networkx as nx
@@ -83,7 +85,7 @@ class SecondOrderRandomWalker:
             else:
                 unnormalized_probs.append(G[dst][dst_nbr]['weight']/q)
         norm_const = sum(unnormalized_probs)
-        normalized_probs =  [float(u_prob)/norm_const for u_prob in unnormalized_probs]
+        normalized_probs = [float(u_prob)/norm_const for u_prob in unnormalized_probs]
 
         return alias_setup(normalized_probs)
 
@@ -97,10 +99,10 @@ class SecondOrderRandomWalker:
         print("")
         print("Preprocesing.\n")
         for node in tqdm(G.nodes()):
-             unnormalized_probs = [G[node][nbr]['weight'] for nbr in sorted(G.neighbors(node))]
-             norm_const = sum(unnormalized_probs)
-             normalized_probs =  [float(u_prob)/norm_const for u_prob in unnormalized_probs]
-             alias_nodes[node] = alias_setup(normalized_probs)
+            unnormalized_probs = [G[node][nbr]['weight'] for nbr in sorted(G.neighbors(node))]
+            norm_const = sum(unnormalized_probs)
+            normalized_probs = [float(u_prob)/norm_const for u_prob in unnormalized_probs]
+            alias_nodes[node] = alias_setup(normalized_probs)
 
         alias_edges = {}
         triads = {}
@@ -181,9 +183,10 @@ class FirstOrderRandomWalker:
         """
         walk = [node]
         while len(walk) < self.walk_length:
-            if len(nx.neighbors(self.G,walk[-1])) == 0:
+            nebs = [n for n in nx.neighbors(self.G, walk[-1])]
+            if len(nebs) == 0:
                 break
-            walk = walk + [random.sample(nx.neighbors(self.G,walk[-1]),1)[0]]
+            walk.append(random.choice(nebs))
         return walk
 
     def simulate_walks(self):

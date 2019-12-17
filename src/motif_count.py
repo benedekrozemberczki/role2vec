@@ -1,3 +1,5 @@
+"""Heterogeneous Motif Counting Tool.""""
+
 import math
 import pandas as pd
 import networkx as nx
@@ -28,7 +30,7 @@ class MotifCounterMachine(object):
         subsets = [[edge[0], edge[1]] for edge in self.graph.edges()]
         self.edge_subsets[2] = subsets
         unique_subsets = dict()
-        for i in range(3,self.args.graphlet_size+1):
+        for i in range(3, self.args.graphlet_size+1):
             for subset in tqdm(subsets):
                 for node in subset:
                     for neb in self.graph.neighbors(node):
@@ -36,7 +38,7 @@ class MotifCounterMachine(object):
                         if len(set(new_subset)) == i:
                             new_subset.sort()
                             unique_subsets[tuple(new_subset)] = 1
-            subsets = [list(k) for k,v in unique_subsets.items()]
+            subsets = [list(k) for k, v in unique_subsets.items()]
             self.edge_subsets[i] = subsets
             unique_subsets = dict()
 
@@ -45,7 +47,7 @@ class MotifCounterMachine(object):
         Enumerating connected benchmark graphlets.
         """
         graphs = graph_atlas_g()
-        self.interesting_graphs = {i:[] for i in range(2,self.args.graphlet_size+1)}
+        self.interesting_graphs = {i: [] for i in range(2, self.args.graphlet_size+1)}
         for graph in graphs:
             if graph.number_of_nodes() > 1 and  graph.number_of_nodes() < self.args.graphlet_size+1:
                 if nx.is_connected(graph):
@@ -71,7 +73,7 @@ class MotifCounterMachine(object):
         """
         Calculating the graphlet orbit counts.
         """
-        self.features = {node: {i:0 for i in range(self.unique_motif_count)}for node in self.graph.nodes()}
+        self.features = {n: {i: 0 for i in range(self.unique_motif_count)} for n in self.graph.nodes()}
         for size, node_lists in self.edge_subsets.items():
             graphs = self.interesting_graphs[size]
             for nodes in tqdm(node_lists):
@@ -86,15 +88,15 @@ class MotifCounterMachine(object):
         """
         Creating tabular motifs for factorization.
         """
-        self.binned_features = {node:[] for node in self.graph.nodes()}
+        self.binned_features = {node: [] for node in self.graph.nodes()}
         self.motifs = [[node]+[self.features[node][index] for index in  range(self.unique_motif_count )] for node in self.graph.nodes()]
         self.motifs = pd.DataFrame(self.motifs)
         self.motifs.columns = ["id"] + ["role_"+str(index) for index in range(self.unique_motif_count)]
         for index in range(self.unique_motif_count):
             features = self.motifs["role_"+str(index)].values.tolist()
-            if sum(features)>0:
+            if sum(features) > 0:
                 features = [math.log(feature+1) for feature in features]
-                features = pd.qcut(features,self.args.quantiles,duplicates="drop", labels=False)
+                features = pd.qcut(features, self.args.quantiles, duplicates="drop", labels=False)
                 for node in self.graph.nodes():
                     self.binned_features[node].append(str(int(index*self.args.quantiles + features[node])))
 
@@ -114,7 +116,7 @@ class MotifCounterMachine(object):
         row_number = max(rows)+1
         column_number = max(columns)+1
         features = csr_matrix((scores, (rows, columns)), shape=(row_number, column_number))
-        model = NMF(n_components=self.args.factors, init='random', random_state=self.args.seed, alpha = self.args.beta)
+        model = NMF(n_components=self.args.factors, init="random", random_state=self.args.seed, alpha=self.args.beta)
         factors = model.fit_transform(features)
         kmeans = KMeans(n_clusters=self.args.clusters, random_state=self.args.seed).fit(factors)
         labels = kmeans.labels_

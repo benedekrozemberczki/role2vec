@@ -1,4 +1,6 @@
-from parser import parameter_parser
+"""Model running."""
+
+from param_parser import parameter_parser
 from role2vec import Role2Vec
 from utils import tab_printer
 

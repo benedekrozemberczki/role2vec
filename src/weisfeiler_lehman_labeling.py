@@ -1,6 +1,6 @@
+"""WeisfeilerLehmanMachine"""
+
 import hashlib
-import networkx as nx
-from tqdm import tqdm
 
 class WeisfeilerLehmanMachine:
     """
@@ -17,7 +17,7 @@ class WeisfeilerLehmanMachine:
         self.graph = graph
         self.features = features
         self.nodes = self.graph.nodes()
-        self.extracted_features = {k: [v] for k,v in features.items()}
+        self.extracted_features = {k: [v] for k, v in features.items()}
         self.do_recursions()
 
     def do_a_recursion(self):
@@ -29,7 +29,8 @@ class WeisfeilerLehmanMachine:
         for node in self.nodes:
             nebs = self.graph.neighbors(node)
             degs = [self.features[str(neb)] for neb in nebs]
-            features = "_".join([str(self.features[str(node)])]+sorted([str(deg) for deg in degs]))
+            features = [str(self.features[str(node)])]+sorted([str(deg) for deg in degs])
+            features = "_".join(features)
             hash_object = hashlib.md5(features.encode())
             hashing = hash_object.hexdigest()
             new_features[str(node)] = hashing
@@ -40,5 +41,5 @@ class WeisfeilerLehmanMachine:
         """
         The method does a series of WL recursions.
         """
-        for iteration in range(self.iterations):
+        for _ in range(self.iterations):
             self.features = self.do_a_recursion()

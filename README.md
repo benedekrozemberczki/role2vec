@@ -12,6 +12,8 @@ Random walks are at the heart of many existing network embedding methods. Howeve
 
 The second-order random walk sampling methods were taken from the reference implementation of [Node2vec](https://github.com/aditya-grover/node2vec). </p>
 
+The model is now also available in the package [Karate Club](https://github.com/benedekrozemberczki/karateclub).
+
 This repository provides an implementation of Role2Vec as described in the paper:
 
 > Learning Role-based Graph Embeddings.

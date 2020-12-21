@@ -1,6 +1,7 @@
 Role2Vec
 ============================================
-![License](https://img.shields.io/github/license/benedekrozemberczki/role2vec.svg?color=blue&style=plastic) [![Arxiv](https://img.shields.io/badge/ArXiv-1802.02896-orange.svg?color=blue&style=plastic)](https://arxiv.org/abs/1802.02896) ![Astro](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fastronomer.ullaakut.eu%2Fshields%3Fowner%3Dbenedekrozemberczki%26name%3Drole2vec) [![codebeat badge](https://codebeat.co/badges/13fe1050-b943-4095-b753-2896abc70f58)](https://codebeat.co/projects/github-com-benedekrozemberczki-role2vec-master)
+![License](https://img.shields.io/github/license/benedekrozemberczki/role2vec.svg?color=blue&style=plastic) [![Arxiv](https://img.shields.io/badge/ArXiv-1802.02896-orange.svg?color=blue&style=plastic)](https://arxiv.org/abs/1802.02896) [![codebeat badge](https://codebeat.co/badges/13fe1050-b943-4095-b753-2896abc70f58)](https://codebeat.co/projects/github-com-benedekrozemberczki-role2vec-master) [![repo size](https://img.shields.io/github/repo-size/benedekrozemberczki/role2vec.svg)](https://github.com/benedekrozemberczki/role2vec/archive/master.zip)
+
 
 A scalable parallel gensim implementation of **Learning Role-based Graph Embeddings (IJCAI 2018)**.
 <p align="center">

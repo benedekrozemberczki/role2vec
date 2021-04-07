@@ -3,7 +3,7 @@ Role2Vec
 [![Arxiv](https://img.shields.io/badge/ArXiv-1802.02896-orange.svg?color=blue)](https://arxiv.org/abs/1802.02896) [![codebeat badge](https://codebeat.co/badges/13fe1050-b943-4095-b753-2896abc70f58)](https://codebeat.co/projects/github-com-benedekrozemberczki-role2vec-master) [![repo size](https://img.shields.io/github/repo-size/benedekrozemberczki/role2vec.svg)](https://github.com/benedekrozemberczki/role2vec/archive/master.zip)⠀[![benedekrozemberczki](https://img.shields.io/twitter/follow/benrozemberczki?style=social&logo=twitter)](https://twitter.com/intent/follow?screen_name=benrozemberczki)⠀
 
 
-A scalable parallel gensim implementation of **Learning Role-based Graph Embeddings (IJCAI 2018)**.
+A scalable parallel **gensim** implementation of **Learning Role-based Graph Embeddings (IJCAI 2018)**.
 <p align="center">
   <img width="500" src="orbit.png">
 </p>

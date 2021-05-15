@@ -126,3 +126,5 @@ python src/main.py --sampling second --P 1 --Q 4
 **License**
 
 - [GNU](https://github.com/benedekrozemberczki/Role2Vec/blob/master/LICENSE)
+
+--------------------------------------------------------------------------------

@@ -9,7 +9,7 @@ A scalable parallel **gensim** implementation of **Learning Role-based Graph Emb
 </p>
 
 
---------------------------------------------------------------------------------
+-----------------------------------------------------------
 
 
 ### Abstract

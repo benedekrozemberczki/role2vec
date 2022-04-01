@@ -98,6 +98,6 @@ class Role2Vec:
         """
         columns = ["id"] + ["x_"+str(x) for x in range(self.embedding.shape[1])]
         ids = np.array([node for node in self.graph.nodes()]).reshape(-1, 1)
-        embedding = pd.DataFrame(np.concatenate([ids, embedding], axis=1), columns=columns)
+        embedding = pd.DataFrame(np.concatenate([ids, self.embedding], axis=1), columns=columns)
         embedding = embedding.sort_values(by=['id'])
         embedding.to_csv(self.args.output, index=None)
